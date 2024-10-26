@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Tienda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Enlace a los estilos CSS -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <!-- Fuente de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/">
+                <span>📂</span> 
+                <span>Mi Tienda</span>
+            </a>
+        </h1>
+        <nav>
+            {% if current_user %}
+                <span>Bienvenido, {{ current_user.username }}</span>
+                <a href="/add_product">Agregar Producto</a>
+                <a href="/logout">Cerrar Sesión</a>
+            {% else %}
+                <a href="/login">Iniciar Sesión</a>
+                <a href="/register">Registrarse</a>
+            {% endif %}
+        </nav>
+    </header>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <!-- Enlace al script de búsqueda -->
+    <script src="/static/js/search.js"></script>
+</body>
+</html>
