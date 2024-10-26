@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Lista de Productos</h2>
+
+    <!-- Campo de Búsqueda -->
+    <input type="text" id="search-input" placeholder="Buscar productos..." />
+
+    <div class="product-grid" id="product-list">
+        {% for product, rating_count in products_with_ratings %}
+        <div class="product-card product-item">
+            <img src="/static/images/{{ product.image }}" alt="{{ product.name }}">
+            <div class="product-card-content">
+                <h3><a href="/product/{{ product.id }}">{{ product.name }}</a></h3>
+                <p>Precio: ${{ product.price }}</p>
+                <p>Stock: {{ product.stock }}</p>
+                <p>Autor: <a href="/user/{{ product.owner.id }}">{{ product.owner.username }}</a></p>
+                <p>👍 {{ rating_count }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

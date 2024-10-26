@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="product-detail">
+        <img src="/static/images/{{ product.image }}" alt="{{ product.name }}">
+        <div class="product-detail-content">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p><strong>Precio:</strong> ${{ product.price }}</p>
+            <p><strong>Stock:</strong> {{ product.stock }}</p>
+            <p><strong>Autor:</strong> <a href="/user/{{ product.owner.id }}">{{ product.owner.username }}</a></p>
+            <p><strong>Puntuaciones:</strong> 👍 {{ rating_count }}</p>
+
+            {% if current_user %}
+                {% if not user_has_rated and current_user.id != product.owner.id %}
+                    <form action="/rate_product/{{ product.id }}" method="post">
+                        <button type="submit" class="button">👍 Puntuación</button>
+                    </form>
+                {% else %}
+                    <p>Ya has puntuado este producto.</p>
+                {% endif %}
+            {% else %}
+                <p><a href="/login">Inicia sesión</a> para puntuar este producto.</p>
+            {% endif %}
+
+            {% if current_user and current_user.id == product.owner.id %}
+                <div class="button-group">
+                    <a href="/edit_product/{{ product.id }}" class="button">Editar</a>
+                    <form action="/delete_product/{{ product.id }}" method="post" style="display:inline;">
+                        <button type="submit" class="button button-danger">Eliminar</button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

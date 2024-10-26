@@ -192,3 +192,161 @@ form button:hover {
     background-color: #28a745;
     color: #fff;
 }
+
+
+/* Campo de búsqueda */
+#search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    margin: 20px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #28a745;
+}
+
+/* Grid de productos */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Tarjetas de productos */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(25% - 20px);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-card-content {
+    padding: 15px;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-card p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.product-card a {
+    text-decoration: none;
+    color: #28a745;
+}
+
+.product-card a:hover {
+    text-decoration: underline;
+}
+
+/* Información del producto en detalle */
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.product-detail img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.product-detail-content {
+    flex: 1;
+}
+
+.product-detail-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.product-detail-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Responsividad */
+@media (max-width: 1200px) {
+    .product-card {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 992px) {
+    .product-card {
+        width: calc(50% - 20px);
+    }
+
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-detail img {
+        max-width: 100%;
+    }
+
+    .product-detail-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    #search-input {
+        max-width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-card {
+        width: 100%;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
