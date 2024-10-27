@@ -1,9 +1,4 @@
-# schemas.py
-
-# Importamos Pydantic para crear esquemas de validación de datos
 from pydantic import BaseModel
-
-# Esquemas Pydantic para validar los datos al crear o editar usuarios y productos.
 
 class UserCreate(BaseModel):
     username: str

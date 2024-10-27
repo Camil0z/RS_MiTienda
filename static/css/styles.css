@@ -1,27 +1,23 @@
-/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos del cuerpo */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f0f2f5;
     color: #333;
 }
 
-/* Contenedor principal */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Encabezado */
 header {
-    background-color: #28a745; /* Color verde */
+    background-color: #28a745;
     padding: 15px 20px;
     color: #fff;
     position: sticky;
@@ -69,12 +65,10 @@ header nav a:hover {
     color: #d4d4d4;
 }
 
-/* Estilos del contenido principal */
 main {
     padding: 20px 0;
 }
 
-/* Título */
 h2 {
     margin-bottom: 20px;
     font-size: 28px;
@@ -82,7 +76,6 @@ h2 {
     color: #333;
 }
 
-/* Formularios */
 form {
     background-color: #fff;
     padding: 30px;
@@ -139,7 +132,6 @@ form button:hover {
     background-color: #218838;
 }
 
-/* Botones */
 .button {
     display: inline-block;
     background-color: #28a745;
@@ -175,7 +167,6 @@ form button:hover {
     margin-right: 10px;
 }
 
-/* Mensajes */
 .message {
     margin-bottom: 20px;
     padding: 15px;
@@ -194,7 +185,6 @@ form button:hover {
 }
 
 
-/* Campo de búsqueda */
 #search-input {
     width: 100%;
     max-width: 400px;
@@ -211,7 +201,6 @@ form button:hover {
     border-color: #28a745;
 }
 
-/* Grid de productos */
 .product-grid {
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +208,6 @@ form button:hover {
     justify-content: center;
 }
 
-/* Tarjetas de productos */
 .product-card {
     background-color: #fff;
     border: 1px solid #e0e0e0;
@@ -265,7 +253,6 @@ form button:hover {
     text-decoration: underline;
 }
 
-/* Información del producto en detalle */
 .product-detail {
     display: flex;
     flex-wrap: wrap;
@@ -295,7 +282,6 @@ form button:hover {
     color: #555;
 }
 
-/* Responsividad */
 @media (max-width: 1200px) {
     .product-card {
         width: calc(33.333% - 20px);

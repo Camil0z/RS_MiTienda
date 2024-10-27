@@ -1,5 +1,3 @@
-// search.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const productList = document.getElementById('product-list');
